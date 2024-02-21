@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Curriculum Vitae</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #F0EDE5;
-            /* Nude color for the background */
+            color: #3D3B35;
+            /* Darker color for text */
         }
 
         header {
             background-color: #F0EDE5;
-            /* Nude color for the header background */
             padding: 20px 0;
             text-align: center;
         }
+
         nav {
-            background-color: #F0EDE5; /* Nude color for the background */
+            background-color: #F0EDE5;
             padding: 10px 0;
             text-align: center;
         }
@@ -38,79 +39,75 @@
 
         nav a {
             text-decoration: none;
-            color: #7E7A73; /* Nude color for the text */
+            color: #7E7A73;
             padding: 10px 20px;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #3D3B35; /* Darker color on hover */
+            color: #3D3B35;
         }
 
-        .repositories {
+        .cv-content {
             margin: 50px auto;
-            max-width: 600px;
+            max-width: 800px;
             background-color: #FFFFFF;
-            /* White background for the repository section */
             padding: 20px;
             border-radius: 10px;
         }
 
-        .repositories h2 {
+        .cv-content h2 {
             color: #3D3B35;
-            /* Darker color for heading */
+            margin-top: 0;
         }
 
-        .repositories ul {
+        .cv-content ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .repositories li {
+        .cv-content li {
             margin-bottom: 10px;
         }
 
-        .repositories a {
+        .cv-content a {
             text-decoration: none;
             color: #7E7A73;
-            /* Nude color for links */
         }
 
-        .repositories a:hover {
+        .cv-content a:hover {
             color: #3D3B35;
-            /* Darker color on hover */
         }
 
         footer {
             background-color: #F0EDE5;
-            /* Nude color for footer background */
             padding: 20px 0;
             text-align: center;
         }
 
         footer p {
             color: #7E7A73;
-            /* Nude color for footer text */
         }
 
         .moving-image {
             position: fixed;
             width: 100px;
             height: auto;
-            bottom: 0; /* Position at the bottom of the screen */
-            right: 0; /* Start position at the left edge */
-            animation: moveImage 5s linear infinite; /* Animation properties */
+            bottom: 0;
+            right: 0;
+            animation: moveImage 5s linear infinite;
         }
 
         @keyframes moveImage {
             0% {
-                right: 0; /* Starting position */
+                right: 0;
             }
             100% {
-                right: calc(100% - 50px); /* Ending position */
+                right: calc(100% - 50px);
             }
         }
 
+        /* Make the "Portfolio" link bold */
         nav ul li:nth-child(3) a {
             font-weight: bold;
         }
@@ -118,19 +115,47 @@
 </head>
 
 <body>
+    <header>
+        <h1>Kristine Angela A. Gallawan</h1>
+        <p>IT Student | Ateneo de Davao University</p>
+    </header>
+
     <nav>
         <ul>
             <li><a href="./home">Home</a></li>
             <li><a href="./about">About</a></li>
             <li><a href="./portfolio">Portfolio</a></li>
-            <li><a href="./something">Game</a></li>
+            <li><a href="./contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="repositories">
-        <h2>My GitHub Repositories</h2>
+    <section class="cv-content">
+        <h2>Education</h2>
         <ul>
-            <li><a href="https://github.com/kristine-ag/kayobahala">Repository 1</a></li>
+            <li>Bachelor of Science in Information Technology</li>
+            <li>Ateneo de Davao University</li>
+            <li>Expected Graduation: May 2025</li>
+        </ul>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: Python, Java, JavaScript</li>
+            <li>Web Development: HTML, CSS, React</li>
+            <li>Database Management: SQL, MongoDB</li>
+            <li>Version Control: Git, GitHub</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <ul>
+            <li>Intern, XYZ Software Company</li>
+            <li>June 2023 - August 2023</li>
+            <li>Assisted in software development projects</li>
+            <li>Participated in team meetings and discussions</li>
+        </ul>
+
+        <h2>GitHub Repositories</h2>
+        <ul>
+            <li><a href="https://github.com/kristine-ag/kayobahala">kayobahala</a> - Personal project</li>
             <li><a href="https://github.com/username/repo2">Repository 2</a></li>
             <li><a href="https://github.com/username/repo3">Repository 3</a></li>
             <!-- Add more repositories as needed -->
@@ -138,11 +163,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Kristine Angela A. Gallawan. All rights reserved.</p>
     </footer>
 
     <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
-
 </body>
 
 </html>
