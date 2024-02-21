@@ -9,42 +9,115 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-
-        nav {
             background-color: #F0EDE5;
             /* Nude color for the background */
-            padding: 10px 0;
         }
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        header {
+            background-color: #F0EDE5;
+            /* Nude color for the header background */
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #F0EDE5; /* Nude color for the background */
+            padding: 10px 0;
             text-align: center;
         }
 
-        li {
-            display: inline;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
-        a {
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
             text-decoration: none;
-            color: #7E7A73;
-            /* Nude color for the text */
+            color: #7E7A73; /* Nude color for the text */
             padding: 10px 20px;
             transition: color 0.3s ease;
         }
 
-        a:hover {
+        nav a:hover {
+            color: #3D3B35; /* Darker color on hover */
+        }
+
+        .repositories {
+            margin: 50px auto;
+            max-width: 600px;
+            background-color: #FFFFFF;
+            /* White background for the repository section */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .repositories h2 {
+            color: #3D3B35;
+            /* Darker color for heading */
+        }
+
+        .repositories ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .repositories li {
+            margin-bottom: 10px;
+        }
+
+        .repositories a {
+            text-decoration: none;
+            color: #7E7A73;
+            /* Nude color for links */
+        }
+
+        .repositories a:hover {
             color: #3D3B35;
             /* Darker color on hover */
+        }
+
+        footer {
+            background-color: #F0EDE5;
+            /* Nude color for footer background */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #7E7A73;
+            /* Nude color for footer text */
+        }
+
+        .moving-image {
+            position: fixed;
+            width: 100px;
+            height: auto;
+            bottom: 0; /* Position at the bottom of the screen */
+            right: 0; /* Start position at the left edge */
+            animation: moveImage 5s linear infinite; /* Animation properties */
+        }
+
+        @keyframes moveImage {
+            0% {
+                right: 0; /* Starting position */
+            }
+            100% {
+                right: calc(100% - 50px); /* Ending position */
+            }
+        }
+
+        nav ul li:nth-child(3) a {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-
     <nav>
         <ul>
             <li><a href="./home">Home</a></li>
@@ -53,6 +126,22 @@
             <li><a href="./something">Game</a></li>
         </ul>
     </nav>
+
+    <section class="repositories">
+        <h2>My GitHub Repositories</h2>
+        <ul>
+            <li><a href="https://github.com/kristine-ag/kayobahala">Repository 1</a></li>
+            <li><a href="https://github.com/username/repo2">Repository 2</a></li>
+            <li><a href="https://github.com/username/repo3">Repository 3</a></li>
+            <!-- Add more repositories as needed -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
 
 </body>
 

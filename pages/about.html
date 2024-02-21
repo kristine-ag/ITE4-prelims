@@ -9,42 +9,68 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #F0EDE5; /* Nude color for the background */
         }
 
         nav {
-            background-color: #F0EDE5;
-            /* Nude color for the background */
+            background-color: #F0EDE5; /* Nude color for the background */
             padding: 10px 0;
+            text-align: center;
         }
 
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         li {
             display: inline;
+            margin-right: 20px;
         }
 
         a {
             text-decoration: none;
-            color: #7E7A73;
-            /* Nude color for the text */
+            color: #7E7A73; /* Nude color for the text */
             padding: 10px 20px;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #3D3B35;
-            /* Darker color on hover */
+            color: #3D3B35; /* Darker color on hover */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #3D3B35; /* Darker color for heading */
+        }
+
+        .moving-image {
+            position: fixed;
+            width: 100px;
+            height: auto;
+            bottom: 0; /* Position at the bottom of the screen */
+            right: 0; /* Start position at the left edge */
+            animation: moveImage 5s linear infinite; /* Animation properties */
+        }
+
+        @keyframes moveImage {
+            0% {
+                right: 0; /* Starting position */
+            }
+            100% {
+                right: calc(100% - 50px); /* Ending position */
+            }
+        }
+
+        nav ul li:nth-child(2) a {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-
     <nav>
         <ul>
             <li><a href="./home">Home</a></li>
@@ -53,6 +79,9 @@
             <li><a href="./something">Game</a></li>
         </ul>
     </nav>
+
+
+    <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
 
 </body>
 

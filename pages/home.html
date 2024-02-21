@@ -9,42 +9,106 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #F0EDE5; /* Nude color for the background */
+            color: #3D3B35; /* Darker color for text */
+            position: relative; /* Add relative positioning to body */
         }
 
         nav {
-            background-color: #F0EDE5;
-            /* Nude color for the background */
+            background-color: #F0EDE5; /* Nude color for the background */
             padding: 10px 0;
+            text-align: center;
         }
 
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         li {
             display: inline;
+            margin-right: 20px;
         }
 
         a {
             text-decoration: none;
-            color: #7E7A73;
-            /* Nude color for the text */
-            padding: 10px 20px;
+            color: #7E7A73; /* Nude color for the text */
+            padding: 10px;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #3D3B35;
-            /* Darker color on hover */
+            color: #3D3B35; /* Darker color on hover */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container img {
+            width: 250px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Add some space below the image */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px; /* Reduce margin-bottom */
+        }
+
+        .cta-button {
+            background-color: #FFB6C1; /* Pastel pink color for button */
+            color: #3D3B35; /* Darker color for button text */
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #FFC0CB; /* Lighter shade on hover */
+        }
+
+        footer {
+            background-color: #F0EDE5;
+            padding: 100px;
+        }
+
+        .moving-image {
+            position: fixed;
+            width: 100px;
+            height: auto;
+            bottom: 0; /* Position at the bottom of the screen */
+            right: 0; /* Start position at the left edge */
+            animation: moveImage 5s linear infinite; /* Animation properties */
+        }
+
+        @keyframes moveImage {
+            0% {
+                right: 0; /* Starting position */
+            }
+            100% {
+                right: calc(100% - 50px); /* Ending position */
+            }
+        }
+
+        /* Make the text in the first list item bold */
+        nav ul li:nth-child(1) a {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-
     <nav>
         <ul>
             <li><a href="./home">Home</a></li>
@@ -53,6 +117,29 @@
             <li><a href="./something">Game</a></li>
         </ul>
     </nav>
+
+    <div class="container">
+        <img src="https://media.tenor.com/lCKwsD2OW1kAAAAi/happy-cat-happy-happy-cat.gif" alt="Error Image">
+        <h1>Welcome to My Website</h1>
+        <p>I am Kristine Angela A. Gallawan,</p>
+        <p>A 3rd Year Student at Ateneo de Davao University</p>
+        <p>At hindi nila alam na isa pala akong anak ng Mafia Boss</p>
+        <p>And I believe in the saying that the children are our future</p>
+        <p>Teach them well and let them lead the way</p>
+        <p>Show them all the beauty they possess inside</p>
+        <p>Give them a sense of pride to make it easier</p>
+        <p>Let the children's laughter remind us how we used to be</p>
+        <p>And I, Thank you!</p>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+
+        <a href="./portfolio" class="cta-button">View Portfolio</a>
+    </div>
+    <footer>
+        <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
+    </footer>
 
 </body>
 

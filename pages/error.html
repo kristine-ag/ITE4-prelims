@@ -34,26 +34,21 @@
             /* Darker color on hover */
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
         nav {
-            background-color: #F0EDE5;
-            /* Nude color for the background */
+            background-color: #F0EDE5; /* Nude color for the background */
             padding: 10px 0;
+            text-align: center;
         }
 
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         li {
             display: inline;
+            margin-right: 20px;
         }
 
         a {
@@ -68,6 +63,32 @@
             color: #3D3B35;
             /* Darker color on hover */
         }
+
+        .error-container img {
+            width: 250px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Add some space below the image */
+        }
+
+        .moving-image {
+            position: fixed;
+            width: 100px;
+            height: auto;
+            bottom: 0; /* Position at the bottom of the screen */
+            right: 0; /* Start position at the left edge */
+            animation: moveImage 5s linear infinite; /* Animation properties */
+        }
+
+        @keyframes moveImage {
+            0% {
+                right: 0; /* Starting position */
+            }
+            100% {
+                right: calc(100% - 50px); /* Ending position */
+            }
+        }
+
+        
     </style>
 </head>
 
@@ -83,30 +104,14 @@
     </nav>
 
     <div class="error-container">
+        <img src="https://cdn3.emoji.gg/emojis/9109_Sad_Cat_Thumbs_Up.png" alt="Error Image"> <!-- Add your image URL here -->
         <h1>Error 404 - Page Not Found</h1>
         <p>Oops! The page you're looking for could not be found.</p>
-        <p>Don't worry, you can <a href="#">return to the homepage</a> or use the navigation above.</p>
+        <p>Don't worry, you can <a href="./home">return to the homepage</a> or use the navigation above.</p>
     </div>
 
-</body>
 
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-
-
+    <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
 </body>
 
 </html>
