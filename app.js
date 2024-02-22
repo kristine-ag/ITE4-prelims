@@ -20,12 +20,16 @@ const server = http.createServer((req, res) => {
         myurl += 'portfolio.html'
         res.statusCode = 200
     }
-    else if(req.url == '/something'){
+    else if(req.url == '/game'){
+        myurl += 'game.html'
+        res.statusCode = 200
+    }
+    else if(req.url == '/2048'){
         myurl += '2048.html'
         res.statusCode = 200
     }
-    else if(req.url == '/landing'){
-        myurl += 'landing.html'
+    else if(req.url == '/tictactoe'){
+        myurl += 'tictactoe.html'
         res.statusCode = 200
     }
     else{

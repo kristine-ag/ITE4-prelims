@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Cards</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+        }
+
+        nav {
+            background-color: #f2e9d0; /* Nude color for the background */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #7E7A73; /* Nude color for the text */
+            padding: 10px 20px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #3D3B35; /* Darker color on hover */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 250px;
+            height: 350px;
+            background-color: #FFF;
+            border-radius: 10px;
+            margin: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .gif {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .gif {
+            transform: scale(1.1);
+        }
+
+        .title {
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* For responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 80%;
+            }
+        }
+
+        .moving-image {
+            position: fixed;
+            width: 150px;
+            height: auto;
+            bottom: 0;
+            right: 0;
+            animation: moveImage 5s linear infinite;
+        }
+
+        @keyframes moveImage {
+            0% {
+                right: 0;
+            }
+
+            100% {
+                right: calc(100% - 50px);
+            }
+        }
+
+        /* Make the "Portfolio" link bold */
+        nav ul li:nth-child(4) a {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./home">Home</a></li>
+            <li><a href="./about">About</a></li>
+            <li><a href="./portfolio">Portfolio</a></li>
+            <li><a href="./game">Game</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="./2048" class="card">
+            <img src="https://miro.medium.com/v2/resize:fit:820/1*eFZKUHOG7Dte_0DJ8ORU5g.gif" alt="2048" class="gif">
+            <div class="title">2048</div>
+        </a>
+        <a href="./tictactoe" class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Tic-tac-toe-animated.gif" alt="tic-tac-toe" class="gif">
+            <div class="title">tic-tac-toe</div>
+        </a>
+    </div>
+
+    <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
+    
+</body>
+</html>

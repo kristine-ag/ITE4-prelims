@@ -43,20 +43,38 @@
         h1 {
             text-align: center;
             margin-top: 50px;
-            color: #3D3B35; /* Darker color for heading */
+            color: #3D3B35;
+            font-size: 40px; /* Adjust the font size as needed */
         }
 
         .container {
+            display: flex;
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
             padding: 50px 20px;
+            align-items: center; /* Align items vertically */
+        }
+
+        .left-side {
+            text-align: left;
+            padding-right: 20px; /* Add some space between the text and image */
+        }
+
+        .right-side {
+            text-align: right;
+            padding-left: 20px; /* Add some space between the text and image */
         }
 
         .container img {
             width: 250px; /* Adjust the width of the image */
             height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Add some space below the image */
+            border-radius: 50%; /* Make the image round */
+            vertical-align: middle; /* Align the image vertically */
+        }
+
+        .lorem-info {
+            text-align: center;
+            margin-top: 20px;
         }
 
         .moving-image {
@@ -80,6 +98,11 @@
         nav ul li:nth-child(2) a {
             font-weight: bold;
         }
+
+        footer {
+            background-color: #F0EDE5;
+            padding: 50px;
+        }
     </style>
 </head>
 
@@ -89,17 +112,34 @@
             <li><a href="./home">Home</a></li>
             <li><a href="./about">About</a></li>
             <li><a href="./portfolio">Portfolio</a></li>
-            <li><a href="./something">Game</a></li>
+            <li><a href="./game">Game</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t1.6435-9/48386779_2154308901458373_5698394108175843328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeHXmyugzPqRbQhgtaPCkX_52OVcxN3PsyTY5VzE3c-zJEH41TBXjSbbLfUXPAqmXvH6egxXus81j1WjWWKfFm17&_nc_ohc=GPQj_F4y63UAX-6Uim8&_nc_ht=scontent.fmnl17-5.fna&oh=00_AfDJpiYhpACE2NC-aPdzxVe7mdGoLSkuvy03_9se2zpfAQ&oe=65FD304A" alt="PROFILE PICTURE">
+        <div class="left-side">
+            <h1>Kristine Angela A. Gallawan</h1>
+        </div>
+        <div class="right-side">
+            <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t1.6435-9/48386779_2154308901458373_5698394108175843328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeHXmyugzPqRbQhgtaPCkX_52OVcxN3PsyTY5VzE3c-zJEH41TBXjSbbLfUXPAqmXvH6egxXus81j1WjWWKfFm17&_nc_ohc=GPQj_F4y63UAX-6Uim8&_nc_ht=scontent.fmnl17-5.fna&oh=00_AfDJpiYhpACE2NC-aPdzxVe7mdGoLSkuvy03_9se2zpfAQ&oe=65FD304A" alt="PROFILE PICTURE" class="profile-picture">
+        </div>
     </div>
 
-
-    <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
-
+    <div class="lorem-info">
+        <p>I am Kristine Angela A. Gallawan,</p>
+        <p>A 3rd Year Student at Ateneo de Davao University</p>
+        <p>At hindi nila alam na isa pala akong anak ng Mafia Boss</p>
+        <p>And I believe in the saying that the children are our future</p>
+        <p>Teach them well and let them lead the way</p>
+        <p>Show them all the beauty they possess inside</p>
+        <p>Give them a sense of pride to make it easier</p>
+        <p>Let the children's laughter remind us how we used to be</p>
+        <p>And I, Thank you!</p>
+    </div>
+    <footer>
+        <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
+    </footer>
+    
 </body>
 
 </html>
