@@ -8,6 +8,10 @@ const server = http.createServer((req, res) => {
         myurl += 'home.html'
         res.statusCode = 200
     }
+    else if(req.url == '/'){
+        myurl += 'home.html'
+        res.statusCode = 200
+    }
     else if(req.url == '/about'){
         myurl += 'about.html'
         res.statusCode = 200
@@ -18,6 +22,10 @@ const server = http.createServer((req, res) => {
     }
     else if(req.url == '/something'){
         myurl += '2048.html'
+        res.statusCode = 200
+    }
+    else if(req.url == '/landing'){
+        myurl += 'landing.html'
         res.statusCode = 200
     }
     else{
