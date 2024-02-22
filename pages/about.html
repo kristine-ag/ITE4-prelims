@@ -46,9 +46,22 @@
             color: #3D3B35; /* Darker color for heading */
         }
 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container img {
+            width: 250px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Add some space below the image */
+        }
+
         .moving-image {
             position: fixed;
-            width: 200px;
+            width: 150px;
             height: auto;
             bottom: 0; /* Position at the bottom of the screen */
             right: 0; /* Start position at the left edge */
@@ -79,6 +92,10 @@
             <li><a href="./something">Game</a></li>
         </ul>
     </nav>
+
+    <div class="container">
+        <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t1.6435-9/48386779_2154308901458373_5698394108175843328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeHXmyugzPqRbQhgtaPCkX_52OVcxN3PsyTY5VzE3c-zJEH41TBXjSbbLfUXPAqmXvH6egxXus81j1WjWWKfFm17&_nc_ohc=GPQj_F4y63UAX-6Uim8&_nc_ht=scontent.fmnl17-5.fna&oh=00_AfDJpiYhpACE2NC-aPdzxVe7mdGoLSkuvy03_9se2zpfAQ&oe=65FD304A" alt="PROFILE PICTURE">
+    </div>
 
 
     <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
