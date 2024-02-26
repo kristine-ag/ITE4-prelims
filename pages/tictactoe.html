@@ -15,7 +15,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-
         }
 
         nav {
@@ -148,109 +147,110 @@
             <div class="grid"></div>
             <div class="grid"></div>
         </div>
-        <p id="message">Goodluck!</p>
+        <p id="message">Good luck!</p>
         <button id="restart">Restart</button>
     </div>
 
     <img src="https://media.tenor.com/TT1hCsF1vUwAAAAi/banana-cat-running.gif" alt="Moving Image" class="moving-image">
-</body>
-<script>
-    let btnRef = document.querySelectorAll(".grid");
-    let msgRef = document.getElementById("message");
-    let restartBtn = document.getElementById("restart");
 
-    let winningPattern = [
-        [0, 1, 2],
-        [0, 3, 6],
-        [2, 5, 8],
-        [6, 7, 8],
-        [3, 4, 5],
-        [1, 4, 7],
-        [0, 4, 8],
-        [2, 4, 6],
-    ];
+    <script>
+        let btnRef = document.querySelectorAll(".grid");
+        let msgRef = document.getElementById("message");
+        let restartBtn = document.getElementById("restart");
 
-    let xTurn = true;
-    let count = 0;
+        let winningPattern = [
+            [0, 1, 2],
+            [0, 3, 6],
+            [2, 5, 8],
+            [6, 7, 8],
+            [3, 4, 5],
+            [1, 4, 7],
+            [0, 4, 8],
+            [2, 4, 6],
+        ];
 
-    const enableButtons = () => {
+        let xTurn = true;
+        let count = 0;
+
+        const enableButtons = () => {
+            btnRef.forEach((element) => {
+                element.innerText = "";
+                element.disabled = false;
+            });
+        };
+
         btnRef.forEach((element) => {
-            element.innerText = "";
-            element.disabled = false;
+            element.addEventListener("click", () => {
+                if (xTurn) {
+                    xTurn = false;
+                    element.innerText = "X";
+                    element.disabled = true;
+                } else {
+                    xTurn = true;
+                    element.innerText = "O";
+                    element.disabled = true;
+                }
+                count += 1;
+                if (count == 9) {
+                    drawFunction();
+                }
+                winChecker();
+            });
         });
-    };
 
-    btnRef.forEach((element) => {
-        element.addEventListener("click", () => {
-            if (xTurn) {
-                xTurn = false;
-                element.innerText = "X";
-                element.disabled = true;
-            } else {
-                xTurn = true;
-                element.innerText = "O";
-                element.disabled = true;
-            }
-            count += 1;
-            if (count == 9) {
-                drawFunction();
-            }
-            winChecker();
+        const drawFunction = () => {
+            setTimeout(() => {
+                alert("Draw")
+            }, 500)
+        };
+
+        restartBtn.addEventListener("click", () => {
+            count = 0;
+            enableButtons();
+            removeWinningLine();
         });
-    });
 
-    const drawFunction = () => {
-        setTimeout(() => {
-            alert("Draw")
-        }, 500)
-    };
+        const removeWinningLine = () => {
+            btnRef.forEach((element) => {
+                element.classList.remove("winning-element");
+            });
+            msgRef.innerHTML = "Good luck!";
+        };
 
-    restartBtn.addEventListener("click", () => {
-        count = 0;
-        enableButtons();
-        removeWinningLine();
-    });
-
-    const removeWinningLine = () => {
-        btnRef.forEach((element) => {
-            element.classList.remove("winning-element");
-        });
-        msgRef.innerHTML = "Goodluck!";
-    };
-
-    const winChecker = () => {
-        for (let i of winningPattern) {
-            let [element1, element2, element3] = [
-                btnRef[i[0]].innerText,
-                btnRef[i[1]].innerText,
-                btnRef[i[2]].innerText,
-            ];
-            if (element1 != "" && (element2 != "") & (element3 != "")) {
-                if (element1 == element2 && element2 == element3) {
-                    btnRef[element1, element2, element3]
-                    winFunction(element1, [i[0], i[1], i[2]]);
+        const winChecker = () => {
+            for (let i of winningPattern) {
+                let [element1, element2, element3] = [
+                    btnRef[i[0]].innerText,
+                    btnRef[i[1]].innerText,
+                    btnRef[i[2]].innerText,
+                ];
+                if (element1 != "" && (element2 != "") & (element3 != "")) {
+                    if (element1 == element2 && element2 == element3) {
+                        btnRef[element1, element2, element3]
+                        winFunction(element1, [i[0], i[1], i[2]]);
+                    }
                 }
             }
-        }
-    };
+        };
 
-    const winFunction = (letter, winningElements) => {
-        if (letter == "X") {
-            msgRef.innerHTML = "X is the winner";
-            setTimeout(() => {
-                alert("X is the winner")
-            }, 500)
-        } else {
-            msgRef.innerHTML = "O is the winner";
-            setTimeout(() => {
-                alert("O is the winner")
-            }, 500)
-        }
+        const winFunction = (letter, winningElements) => {
+            if (letter == "X") {
+                msgRef.innerHTML = "X is the winner";
+                setTimeout(() => {
+                    alert("X is the winner")
+                }, 500)
+            } else {
+                msgRef.innerHTML = "O is the winner";
+                setTimeout(() => {
+                    alert("O is the winner")
+                }, 500)
+            }
 
-        winningElements.forEach((index) => {
-            btnRef[index].classList.add("winning-element");
-        });
-    };
-</script>
+            winningElements.forEach((index) => {
+                btnRef[index].classList.add("winning-element");
+            });
+        };
+    </script>
+</body>
 
 </html>
