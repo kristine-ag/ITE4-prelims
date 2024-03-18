@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express()
+
+app.set('view engine', 'ejs')
+
 const port = 8000;
 
 app.use((req, res, next) => {
@@ -11,27 +14,32 @@ app.use((req, res, next) => {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile(`./pages/home.html`, {root: __dirname})
+    res.sendFile(`./views/home.html`, {root: __dirname})
 })
 
 app.get('/about', function (req, res) {
-        res.sendFile(`./pages/about.html`, {root: __dirname})
+    // res.sendFile(`./views/about.html`, {root: __dirname})
+    res.render('about', {
+        name: "Kristine Angela A. Gallawan",
+        school: "Ateneo de Davao University",
+        email: "kaagallawan@addu.edu.ph",
+    })
 })
 
 app.get('/game', function (req, res) {
-    res.sendFile(`./pages/game.html`, {root: __dirname})
+    res.sendFile(`./views/game.html`, {root: __dirname})
 })
 
 app.get('/portfolio', function (req, res) {
-    res.sendFile(`./pages/portfolio.html`, {root: __dirname})
+    res.sendFile(`./views/portfolio.html`, {root: __dirname})
 })
 
 app.get('/2048', function (req, res) {
-    res.sendFile(`./pages/2048.html`, {root: __dirname})
+    res.sendFile(`./views/2048.html`, {root: __dirname})
 })
 
 app.get('/tictactoe', function (req, res) {
-    res.sendFile(`./pages/tictactoe.html`, {root: __dirname})
+    res.sendFile(`./views/tictactoe.html`, {root: __dirname})
 })
 
 app.get('/home', (req, res) => {
@@ -43,7 +51,7 @@ app.get('/aboutus', (req, res) => {
 })
 
 app.use((req, res) => {
-    res.status(404).sendFile(`./pages/error.html`, {root: __dirname})
+    res.status(404).sendFile(`./views/error.html`, {root: __dirname})
 })
 
 app.listen(port, () => {
